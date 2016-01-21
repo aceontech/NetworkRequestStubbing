@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,19 +18,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="URc-0O-8GN">
-                                <rect key="frame" x="282" y="281" width="37" height="37"/>
-                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mdf-Bg-8Wz">
+                                <rect key="frame" x="20" y="250" width="560" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="NNa-Is-YLH"/>
+                                </constraints>
+                                <state key="normal" title="Get IP address (via HTTP)"/>
+                                <connections>
+                                    <action selector="getIpViaHTTP:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8B8-OA-hNL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0R7-q2-cl7">
+                                <rect key="frame" x="20" y="300" width="560" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="0Tj-xT-02n"/>
+                                </constraints>
+                                <state key="normal" title="Get IP address (via STUB)"/>
+                                <connections>
+                                    <action selector="getIpViaStub:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QHs-Mh-4Ig"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="URc-0O-8GN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="0xx-LF-mMO"/>
-                            <constraint firstItem="URc-0O-8GN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Hw2-Kj-9ek"/>
+                            <constraint firstItem="0R7-q2-cl7" firstAttribute="top" secondItem="mdf-Bg-8Wz" secondAttribute="bottom" id="3SS-Ts-so8"/>
+                            <constraint firstItem="0R7-q2-cl7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="7HO-4V-xnz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mdf-Bg-8Wz" secondAttribute="trailing" id="9UL-ZK-Fcz"/>
+                            <constraint firstItem="0R7-q2-cl7" firstAttribute="leading" secondItem="mdf-Bg-8Wz" secondAttribute="leading" id="fXs-iT-QU1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0R7-q2-cl7" secondAttribute="trailing" id="kZs-Zw-WyE"/>
+                            <constraint firstItem="mdf-Bg-8Wz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="n93-ys-ZpD"/>
+                            <constraint firstItem="mdf-Bg-8Wz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oBc-VH-byU"/>
+                            <constraint firstItem="mdf-Bg-8Wz" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-25" id="uKI-sc-FmC"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="indicator" destination="URc-0O-8GN" id="n0K-1i-Gbm"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

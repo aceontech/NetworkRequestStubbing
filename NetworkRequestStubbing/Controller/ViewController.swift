@@ -10,17 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    // Instantiate the HTTP service implementation
-    private lazy var service:AddressService = AddressStubService() // AddressHTTPService();
+    @IBAction func getIpViaHTTP(sender: UIButton) {
+        self.showIPAddress(AddressHTTPService())
+    }
     
-    // The outlet connected to the activity indicator view
-    @IBOutlet weak var indicator: UIActivityIndicatorView!
+    @IBAction func getIpViaStub(sender: UIButton) {
+        self.showIPAddress(AddressStubService())
+    }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    private func showIPAddress(service:AddressService) {
         // Call the webservice
-        self.service.getIPAddress { address in
+        service.getIPAddress { address in
             // Create an alert to display the address
             let alert = UIAlertController(
                 title: "Your IP address..",
@@ -32,9 +32,6 @@ class ViewController: UIViewController {
             
             // Present the alert to the user
             self.presentViewController(alert, animated: true, completion: nil)
-            
-            // Stop the indicator
-            self.indicator.stopAnimating()
         }
     }
     
