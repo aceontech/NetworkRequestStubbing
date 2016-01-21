@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import OHHTTPStubs
 
 // Adopt the AddressService protocol
 class AddressHTTPService : AddressService {
@@ -24,4 +25,25 @@ class AddressHTTPService : AddressService {
         }
     }
     
+}
+
+class AddressHTTPServiceStubs {
+    static func loadStubs() {
+        // Request is of type NSURLRequest, so you can filter however you want.
+        // In this case, we're using the built-in isPath() matcher.
+        stub(isPath("/ip")) { request in
+            // Use OHPathForFile helper to build the path to the JSON fixture in the main
+            // application bundle
+            let stubPath = OHPathForFile("ip_response.json", AddressHTTPService.self)
+            
+            // Create the fixture with the path and set the content type header to JSON
+            return fixture(stubPath!, headers: ["Content-Type":"application/json"])
+        }
+        
+        OHHTTPStubs.setEnabled(true)
+    }
+    
+    static func unloadStubs() {
+        OHHTTPStubs.setEnabled(false)
+    }
 }

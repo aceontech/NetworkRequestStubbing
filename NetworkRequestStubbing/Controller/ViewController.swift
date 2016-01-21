@@ -7,20 +7,63 @@
 //
 
 import UIKit
+import OHHTTPStubs
 
 class ViewController: UIViewController {
     
+    lazy var service:AddressService = AddressHTTPService()
+    
+    // MARK: Outlets
+    
+    @IBOutlet weak var httpButton: UIButton! {
+        didSet {
+            self.httpButton.tintColor = UIColor.whiteColor()
+            self.httpButton.setBorder(UIColor.whiteColor(), width: 0.5, cornerRadius: 25)
+        }
+    }
+    @IBOutlet weak var stubButton: UIButton! {
+        didSet {
+            self.stubButton.tintColor = UIColor.whiteColor()
+            self.stubButton.setBorder(UIColor.whiteColor(), width: 0.5, cornerRadius: 25)
+        }
+    }
+    
+    // MARK: Actions
+    
     @IBAction func getIpViaHTTP(sender: UIButton) {
-        self.showIPAddress(AddressHTTPService())
+        AddressHTTPServiceStubs.unloadStubs()
+        self.showIPAddress()
     }
     
     @IBAction func getIpViaStub(sender: UIButton) {
-        self.showIPAddress(AddressStubService())
+        AddressHTTPServiceStubs.loadStubs()
+        self.showIPAddress()
     }
     
-    private func showIPAddress(service:AddressService) {
-        // Call the webservice
-        service.getIPAddress { address in
+    // MARK: Lifecycle 
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let blue = UIColor(red: 16/255, green: 72/255, blue: 109/255, alpha: 1).CGColor
+        let green = UIColor(red: 93/255, green: 227/255, blue: 178/255, alpha: 1).CGColor
+        
+        self.insertBackgroundGradient(
+            colors: [blue, green],
+            startPoint: CGPoint(x: 0, y: 0), endPoint: CGPoint(x: 1, y: 1)
+        )
+    }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+}
+
+
+extension ViewController {
+    
+    func showIPAddress() {
+        self.service.getIPAddress { address in
             // Create an alert to display the address
             let alert = UIAlertController(
                 title: "Your IP address..",
@@ -37,3 +80,13 @@ class ViewController: UIViewController {
     
 }
 
+
+private extension UIButton {
+    
+    func setBorder(color:UIColor, width:CGFloat, cornerRadius: CGFloat) {
+        self.layer.borderWidth = width
+        self.layer.borderColor = color.CGColor
+        self.layer.cornerRadius = cornerRadius
+    }
+    
+}
