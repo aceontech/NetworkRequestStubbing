@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     // Instantiate the HTTP service implementation
-    private lazy var service:AddressService = AddressHTTPService();
+    private lazy var service:AddressService = AddressStubService() // AddressHTTPService();
     
     // The outlet connected to the activity indicator view
     @IBOutlet weak var indicator: UIActivityIndicatorView!

@@ -9,15 +9,14 @@
 import Foundation
 import Alamofire
 
+// Adopt the AddressService protocol
 class AddressHTTPService : AddressService {
     
     func getIPAddress(callback: (String) -> ()) {
+        // Use Alamofire to build and send a simple HTTP JSON request to httpbin.org
+        // When no stubbing is enabled, the /ip endpoint simply returns the IP address of
+        // the requester.
         Alamofire.request(.GET, "https://httpbin.org/ip").responseJSON { response in
-            print(response.request)  // original URL request
-            print(response.response) // URL response
-            print(response.data)     // server data
-            print(response.result)   // result of response serialization
-            
             if let JSON = response.result.value, origin = JSON["origin"] {
                 print("JSON: \(JSON)")
                 callback(origin as! String)

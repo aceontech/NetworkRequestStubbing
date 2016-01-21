@@ -8,9 +8,10 @@
 
 import Foundation
 
+// This protocol defines the web service's contract.
 protocol AddressService {
     
-    // Gets the IP address of the user
+    // Gets the IP address of the user and returns it using a callback
     func getIPAddress(callback: (String)->())
     
 }

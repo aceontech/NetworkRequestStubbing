@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		FA0054311C518FCB00144610 /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA0054301C518FCB00144610 /* OHHTTPStubs.framework */; };
+		FA0054331C51906700144610 /* AddressStubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0054321C51906700144610 /* AddressStubService.swift */; };
+		FA0054351C51914F00144610 /* ip_response.json in Resources */ = {isa = PBXBuildFile; fileRef = FA0054341C51914F00144610 /* ip_response.json */; };
 		FA2037181C4FCA890034899B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2037171C4FCA890034899B /* AppDelegate.swift */; };
 		FA20371D1C4FCA890034899B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA20371B1C4FCA890034899B /* Main.storyboard */; };
 		FA20371F1C4FCA890034899B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA20371E1C4FCA890034899B /* Assets.xcassets */; };
@@ -31,6 +33,8 @@
 
 /* Begin PBXFileReference section */
 		FA0054301C518FCB00144610 /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/iOS/OHHTTPStubs.framework; sourceTree = "<group>"; };
+		FA0054321C51906700144610 /* AddressStubService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressStubService.swift; sourceTree = "<group>"; };
+		FA0054341C51914F00144610 /* ip_response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ip_response.json; sourceTree = "<group>"; };
 		FA2037141C4FCA890034899B /* NetworkRequestStubbing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkRequestStubbing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA2037171C4FCA890034899B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA20371C1C4FCA890034899B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -121,6 +125,7 @@
 				FA2037231C4FCA890034899B /* Info.plist */,
 				FA20371B1C4FCA890034899B /* Main.storyboard */,
 				FA2037201C4FCA890034899B /* LaunchScreen.storyboard */,
+				FA0054341C51914F00144610 /* ip_response.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -130,6 +135,7 @@
 			children = (
 				FA2037411C4FD0BF0034899B /* AddressService.swift */,
 				FA2037431C4FD1880034899B /* AddressHTTPService.swift */,
+				FA0054321C51906700144610 /* AddressStubService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -219,6 +225,7 @@
 				FA2037221C4FCA890034899B /* LaunchScreen.storyboard in Resources */,
 				FA20371F1C4FCA890034899B /* Assets.xcassets in Resources */,
 				FA20371D1C4FCA890034899B /* Main.storyboard in Resources */,
+				FA0054351C51914F00144610 /* ip_response.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA20373C1C4FCE3C0034899B /* ViewController.swift in Sources */,
+				FA0054331C51906700144610 /* AddressStubService.swift in Sources */,
 				FA2037421C4FD0BF0034899B /* AddressService.swift in Sources */,
 				FA2037441C4FD1880034899B /* AddressHTTPService.swift in Sources */,
 				FA2037181C4FCA890034899B /* AppDelegate.swift in Sources */,
