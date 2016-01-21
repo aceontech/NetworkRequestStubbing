@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
     // Instantiate the HTTP service implementation
     private lazy var service:AddressService = AddressHTTPService();
     
@@ -27,7 +28,7 @@ class ViewController: UIViewController {
                 preferredStyle: .Alert)
             
             // Attach a cancel action button
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
             
             // Present the alert to the user
             self.presentViewController(alert, animated: true, completion: nil)
@@ -36,5 +37,6 @@ class ViewController: UIViewController {
             self.indicator.stopAnimating()
         }
     }
+    
 }
 

@@ -9,6 +9,8 @@
 import Foundation
 
 protocol AddressService {
+    
     // Gets the IP address of the user
     func getIPAddress(callback: (String)->())
+    
 }

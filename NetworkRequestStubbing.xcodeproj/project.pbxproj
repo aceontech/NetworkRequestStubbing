@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA0054311C518FCB00144610 /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA0054301C518FCB00144610 /* OHHTTPStubs.framework */; };
 		FA2037181C4FCA890034899B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2037171C4FCA890034899B /* AppDelegate.swift */; };
 		FA20371D1C4FCA890034899B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA20371B1C4FCA890034899B /* Main.storyboard */; };
 		FA20371F1C4FCA890034899B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA20371E1C4FCA890034899B /* Assets.xcassets */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA0054301C518FCB00144610 /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/iOS/OHHTTPStubs.framework; sourceTree = "<group>"; };
 		FA2037141C4FCA890034899B /* NetworkRequestStubbing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkRequestStubbing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA2037171C4FCA890034899B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA20371C1C4FCA890034899B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -50,6 +52,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA2037381C4FCD4D0034899B /* Alamofire.framework in Frameworks */,
+				FA0054311C518FCB00144610 /* OHHTTPStubs.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +69,7 @@
 		FA20370B1C4FCA890034899B = {
 			isa = PBXGroup;
 			children = (
+				FA0054301C518FCB00144610 /* OHHTTPStubs.framework */,
 				FA2037371C4FCD4D0034899B /* Alamofire.framework */,
 				FA2037161C4FCA890034899B /* NetworkRequestStubbing */,
 				FA20372B1C4FCA890034899B /* NetworkRequestStubbingTests */,
@@ -235,6 +239,7 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/OHHTTPStubs.framework",
 			);
 			outputPaths = (
 			);
@@ -452,6 +457,7 @@
 				FA2037331C4FCA890034899B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FA2037341C4FCA890034899B /* Build configuration list for PBXNativeTarget "NetworkRequestStubbingTests" */ = {
 			isa = XCConfigurationList;
@@ -460,6 +466,7 @@
 				FA2037361C4FCA890034899B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
