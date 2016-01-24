@@ -31,12 +31,18 @@ class ViewController: UIViewController {
     // MARK: Actions
     
     @IBAction func getIpViaHTTP(sender: UIButton) {
+        // Unload any stubs
         AddressHTTPServiceStubs.unloadStubs()
+        
+        // Print to display
         self.showIPAddress()
     }
     
     @IBAction func getIpViaStub(sender: UIButton) {
+        // Load stubs
         AddressHTTPServiceStubs.loadStubs()
+        
+        // Print to display
         self.showIPAddress()
     }
     
@@ -45,6 +51,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Just some styling...
         let blue = UIColor(red: 16/255, green: 72/255, blue: 109/255, alpha: 1).CGColor
         let green = UIColor(red: 93/255, green: 227/255, blue: 178/255, alpha: 1).CGColor
         
@@ -54,6 +61,7 @@ class ViewController: UIViewController {
         )
     }
     
+    // Hide the status bar for this controller
     override func prefersStatusBarHidden() -> Bool {
         return true
     }

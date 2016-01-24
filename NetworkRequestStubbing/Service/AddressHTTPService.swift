@@ -19,7 +19,6 @@ class AddressHTTPService : AddressService {
         // the requester.
         Alamofire.request(.GET, "https://httpbin.org/ip").responseJSON { response in
             if let JSON = response.result.value, origin = JSON["origin"] {
-                print("JSON: \(JSON)")
                 callback(origin as! String)
             }
         }
